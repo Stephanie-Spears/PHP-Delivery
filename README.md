@@ -1,6 +1,6 @@
-# _Pizza Pie_
+# _Pizza Delivery_
 
-#### _Pizza Delivery Website for Epicodus Week Four, 01.26.2017_
+#### _Pizza Delivery Web Application, 01.26.2017_
 
 #### By **Stephanie Spears**
 
@@ -11,12 +11,12 @@ _This is a web application in which a user is ordering a pizza. The user is allo
 ## Specifications
 
 * _The app can calculate the total price of a pizza based on topping(s) and size_
-  * _Example Input: topping1: DBLcheese, size: large_
+  * _Example Input: topping1: Cheese, size: large_
   * _Example Output: $20.00_
-  * _Example Input: topping1: DBLcheese, topping2: pepperoni, topping3: sausage, size: small_
-  * _Example Output: $13._
+  * _Example Input: topping1: Cheese, topping2: pepperoni, topping3: sausage, size: small_
+  * _Example Output: $13.00_
 * _It can calculate the the total order cost if there are multiple pizzas in the order_
-  * _Example Input: Pizza 1: DBLcheese, Small; Pizza 2: pepperoni, sausage, DBLcheese, Large_
+  * _Example Input: Pizza 1: Cheese, Small; Pizza 2: pepperoni, sausage, DBLcheese, Large_
   * _Example Output: $43.00_
 
 ## Setup/Installation Requirements
@@ -38,6 +38,7 @@ _Please feel free to contact stephanie.spears1@gmail.com for support._
 * _JavaScript_
 * _jQuery_
 * _BootStrap_
+* _PHP_
 
 ### License
 

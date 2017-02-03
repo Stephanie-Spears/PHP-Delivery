@@ -1,9 +1,17 @@
 <?php
-    $size = $_GET["pizzaSize"];
-    // $topping = $_GET["topping"];
-    $customerName = $_GET["customerName"];
-    $customerAddress = $_GET["customerAddress"];
-    $customerEmail = $_GET["customerEmail"];
+//if (!empty($_POST["pizzaDetailsForm"])){
+  $pizzaSize = $_POST["pizzaSize"];
+  $toppings = $_POST["pizzaToppings"];
+//};
+
+    $orderItem = $_POST["orderItem"];
+
+// if(!empty($_POST["form1"])){
+  $customerName = $_POST["customerName"];
+  $customerAddress = $_POST["customerAddress"];
+  $customerEmail = $_POST["customerEmail"];
+
+// };
 ?>
 
 
@@ -16,17 +24,29 @@
   <body>
     <h1>Customer Receipt</h1>
 
-<p>size: <?php echo $size ?></p>
+    <p>ORDER ITEM:
+      <strong><?php echo $orderItem ?></strong></p>
 
 
-    <p>Thank you, <?php echo $customerName ?>!</p>
-    <p>Your Order is as follows: </p>
 
-    <p>Your order will be shipped to: </p>
-    <p><?php echo $customerAddress ?></p>
+<p>Size:
+    <?php echo $pizzaSize ?>
+</p>
 
-    <p>A receipt has been emailed to: </p>
-    <p> <?php echo $customerEmail ?></p>
+<p>Toppings:
+<?php foreach($toppings as $pizzaToppings) {
+  echo "$pizzaToppings";
+} ?>
+</p>
+
+    <p>Thank you, <strong>  <?php echo $customerName ?>! </strong> </p>
+    <!-- <p>Your Order is as follows: </p> -->
+
+    <!-- <p>Your order will be shipped to: </p> -->
+    <p>  address: <strong> <?php echo $customerAddress ?>  </strong></p>
+
+    <!-- <p>A receipt has been emailed to: </p> -->
+    <p>  email: <strong>  <?php echo $customerEmail ?>  </strong></p>
 
   </body>
 </html>

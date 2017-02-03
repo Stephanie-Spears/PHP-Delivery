@@ -16,45 +16,94 @@ function Pizza(size, toppings){
 
 }
 
+// Pizza.prototype.addToList = function(){
+//   var li=document.createElement("li");
+//   var node = document.createTextNode(this.pizzaSize + this.pizzaToppings + "($)" + this.pizzaPrice.toFixed(2));
+//   li.appendChild(node);
+//   var ul = document.getElementById("pizzaList");
+//   ul.appendChild(li);
+// };
+
+// Pizza.prototype.submitList = function(x){
+//   var input = document.createElement("input");
+//   var node = document.createTextNode(this.pizzaSize + this.pizzaToppings + "($)" + this.pizzaPrice.toFixed(2));
+//   input.appendChild(node);
+//   input.name = "orderItem";
+//   input.value =this.pizzaSize + this.pizzaToppings + "($)" + this.pizzaPrice.toFixed(2);
+//   var ul = document.getElementById(x);
+//   ul.appendChild(input);
+// };
+
+
+
 Pizza.prototype.addToList = function(){
   var li=document.createElement("li");
   var node = document.createTextNode(this.pizzaSize + this.pizzaToppings + "($)" + this.pizzaPrice.toFixed(2));
   li.appendChild(node);
+  // li.name = "orderItem";
   var ul = document.getElementById("pizzaList");
   ul.appendChild(li);
 };
 
+var displayList = function (orderList, count){
+  for (var i = 0; i < count; i++)
+  {
+    var li=document.createElement("li");
+    var node = document.createTextNode(Object.values(orderList[i]));
+    li.appendChild(node);
+    var ul = document.getElementById("displayOrder");
+    ul.appendChild(li);
+
+  }
+};
+
 $(document).ready(function(){
+  var total = 0;
+  var count = 0;
+  var orderList = [];
   $("#readyToOrderButton").click(function(){
     $(this).remove();
-    $("#showForm").show();
+    $("#pizzaDetailsDiv").show();
   });
-  var total = 0;
-    $("#orderPizzaButton").click(function(event){
-    event.preventDefault();
+
+    $("#addPizzaButton").click(function(){
+
     var size = "";
     var toppings = [];
-    size = $("#pizzaDetailsForm input[type='radio']:checked").val();
-    $("#pizzaDetailsForm input[type='checkbox']:checked").each(function(){
+    size = $("#pizzaDetailsDiv input[type='radio']:checked").val();
+    $("#pizzaDetailsDiv input[type='checkbox']:checked").each(function(){
       toppings.push($(this).val());
     });
 
     var myPizza = new Pizza(size, toppings);
     total += myPizza.pizzaPrice;
 
+
     $("#customerOrder").show();
-    $("#checkoutButton").show();
+    $("#continueToCheckoutButton").show();
+
     myPizza.addToList();
+    orderList[count] = myPizza;
+    count++;
 
     $("#showTotal").text("$" + total.toFixed(2));
-  });
-  $("#checkoutButton").click(function(event){
-    event.preventDefault();
-    $("#showForm").hide();
 
-    $("#customerDetailsForm").show();
-    // $("html, body").animate({
-    //   scrollTop: $("#customerDetailsForm").offset().top
-    // }, 2000);
   });
+
+  $("#continueToCheckoutButton").click(function(){
+
+    $("html, body").animate({
+      scrollTop: $("#form1").offset().top
+    }, 2000);
+    $("#showForm").hide();
+    $("#form1").show();
+
+      displayList(orderList, count);
+
+      // document.getElementById("displayOrder").innerHTML = Object.values(orderList[i]);
+
+
+
+  });
+    $("#customerDetailsSubmitButton").submit();
 });

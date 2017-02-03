@@ -10,9 +10,13 @@ body {
   text-align: center;
 }
 
-#showForm, #checkoutButton, #customerDetailsForm, #customerOrder{
+/*#pizzaDetailsDiv{
   display: none;
-}
+}*/
+
+/*#showForm, #checkoutButton, #customerDetailsForm, #customerOrder{
+  display: none;
+}*/
 
 
 .btn-xl{

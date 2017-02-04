@@ -1,17 +1,13 @@
 <?php
-//if (!empty($_POST["pizzaDetailsForm"])){
   $pizzaSize = $_POST["pizzaSize"];
   $toppings = $_POST["pizzaToppings"];
-//};
 
     $orderItem = $_POST["orderItem"];
 
-// if(!empty($_POST["form1"])){
   $customerName = $_POST["customerName"];
   $customerAddress = $_POST["customerAddress"];
   $customerEmail = $_POST["customerEmail"];
 
-// };
 ?>
 
 

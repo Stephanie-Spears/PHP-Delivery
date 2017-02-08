@@ -36,7 +36,7 @@ var clearList = function (total){
   var x = document.getElementById("pizzaList");
   alert(x.value);
   // total -= x.value;
-  alert(parseFloat(x.value));
+  // alert(parseFloat(x.value));
   x.remove(x.selectedIndex);
 };
 

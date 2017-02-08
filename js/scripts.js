@@ -15,7 +15,7 @@ function Pizza(size, toppings){
 }
 
 Pizza.prototype.addToList = function(){
-  var li=document.createElement("li");
+  var li=document.createElement("option");
   var node = document.createTextNode(this.pizzaSize + this.pizzaToppings + "($)" + this.pizzaPrice.toFixed(2));
   li.appendChild(node);
   var ul = document.getElementById("pizzaList");

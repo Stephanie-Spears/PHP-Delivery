@@ -57,13 +57,14 @@ var displayList = function (orderList, count){
   }
 };
 
-var clearList = function (){
-  for (var i = 0; i < count; i++)
-  {
-    var ul = document.getElementById("displayOrder");
-    ul.removeChild(li);
-  }
-};
+// var clearList = function (){
+//   for (var i = 0; i < count; i++)
+//   {
+//
+//     var ul = document.getElementById("displayOrder");
+//     $(this).remove();
+//   }
+// };
 
 $(document).ready(function(){
   var total = 0;
@@ -113,12 +114,12 @@ $(document).ready(function(){
 
 
   });
-  $("clearFormButton").reset(function(event){
-    event.preventDefault();
-    clearList();
-    var total = 0;
-    var count = 0;
-    var orderList = [];
-  });
+  // $("clearFormButton").submit(function(event){
+  //   event.preventDefault();
+  //   clearList();
+  //   var total = 0;
+  //   var count = 0;
+  //   var orderList = [];
+  // });
     $("#customerDetailsSubmitButton").submit();
 });

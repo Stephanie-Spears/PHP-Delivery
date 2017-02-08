@@ -57,6 +57,14 @@ var displayList = function (orderList, count){
   }
 };
 
+var clearList = function (){
+  for (var i = 0; i < count; i++)
+  {
+    var ul = document.getElementById("displayOrder");
+    ul.removeChild(li);
+  }
+};
+
 $(document).ready(function(){
   var total = 0;
   var count = 0;
@@ -104,6 +112,13 @@ $(document).ready(function(){
 
 
 
+  });
+  $("clearFormButton").reset(function(event){
+    event.preventDefault();
+    clearList();
+    var total = 0;
+    var count = 0;
+    var orderList = [];
   });
     $("#customerDetailsSubmitButton").submit();
 });

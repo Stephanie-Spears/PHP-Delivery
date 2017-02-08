@@ -2,8 +2,7 @@ function Pizza(size, toppings){
   this.pizzaSize = size;
   this.pizzaToppings = toppings;
   this.pizzaPrice = 0;
-  for (var i = 0; i < this.pizzaToppings.length; i++)
-  {
+  for (var i = 0; i < this.pizzaToppings.length; i++){
     this.pizzaPrice +=2.50;
   }
   if (this.pizzaSize === 'Small'){
@@ -13,27 +12,23 @@ function Pizza(size, toppings){
   } else if (this.pizzaSize === 'Large') {
     this.pizzaPrice += 20;
   }
-
 }
 
 Pizza.prototype.addToList = function(){
   var li=document.createElement("li");
   var node = document.createTextNode(this.pizzaSize + this.pizzaToppings + "($)" + this.pizzaPrice.toFixed(2));
   li.appendChild(node);
-  // li.name = "orderItem";
   var ul = document.getElementById("pizzaList");
   ul.appendChild(li);
 };
 
 var displayList = function (orderList, count){
-  for (var i = 0; i < count; i++)
-  {
+  for (var i = 0; i < count; i++){
     var li=document.createElement("li");
     var node = document.createTextNode(Object.values(orderList[i]));
     li.appendChild(node);
     var ul = document.getElementById("displayOrder");
     ul.appendChild(li);
-
   }
 };
 

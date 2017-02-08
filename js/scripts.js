@@ -32,8 +32,11 @@ var displayList = function (orderList, count){
   }
 };
 
-var clearList = function (){
+var clearList = function (total){
   var x = document.getElementById("pizzaList");
+  alert(x.value);
+  total -= x.value;
+  // alert(parseInt(x.value));
   x.remove(x.selectedIndex);
 };
 
@@ -45,7 +48,7 @@ $(document).ready(function(){
     $(this).remove();
     $("#pizzaDetailsDiv").show();
   });
-    $("#addPizzaButton").click(function(){
+  $("#addPizzaButton").click(function(){
     var size = "";
     var toppings = [];
     size = $("#pizzaDetailsDiv input[type='radio']:checked").val();
@@ -57,9 +60,13 @@ $(document).ready(function(){
     $("#customerOrder").show();
     $("#continueToCheckoutButton").show();
     myPizza.addToList();
+    // displayList(orderList, count);
     orderList[count] = myPizza;
     count++;
     $("#showTotal").text("$" + total.toFixed(2));
+  });
+  $("#removePizzaButton").click(function(){
+    clearList(total);
   });
   $("#continueToCheckoutButton").click(function(){
     $("html, body").animate({
@@ -67,7 +74,7 @@ $(document).ready(function(){
     }, 2000);
     $("#showForm").hide();
     $("#form1").show();
-      displayList(orderList, count);
+    displayList(orderList, count);
   }); // document.getElementById("displayOrder").innerHTML = Object.values(orderList[i]);
-    $("#customerDetailsSubmitButton").submit();
+  $("#customerDetailsSubmitButton").submit();
 });

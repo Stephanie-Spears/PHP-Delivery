@@ -108,6 +108,71 @@
           </form><!-- NOTE: end form div -->
         </div><!-- NOTE: end col 1 div -->
       </div><!-- NOTE: end row1 div -->
+
+      <form>
+      <select id="mySelect1" size="4">
+        <option>Apple</option>
+        <option>Pear</option>
+        <option>Banana</option>
+        <option>Orange</option>
+      </select>
+      </form>
+      <br>
+
+      <button onclick="myFunction1()">Remove option with index "2"</button>
+
+      <script>
+      function myFunction1() {
+          var x = document.getElementById("mySelect1");
+          x.remove(2);
+      }
+      </script>
+
+      <form>
+<select id="mySelect2" size="4">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+</form>
+<br>
+
+<button onclick="myFunction2()">Remove last option</button>
+
+<script>
+function myFunction2() {
+    var x = document.getElementById("mySelect2");
+    if (x.length > 0) {
+        x.remove(x.length-1);
+    }
+}
+</script>
+
+<form>
+Select a fruit:
+<br>
+<select id="mySelect3" size="4">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+</form>
+<br>
+
+<button onclick="myFunction3()">Remove selected fruit</button>
+
+<script>
+function myFunction3() {
+    var x = document.getElementById("mySelect3");
+    x.remove(x.selectedIndex);
+}
+</script>
+
+
+      http://www.w3schools.com/jsref/met_select_remove.asp
+
     </div><!-- NOTE: end container div -->
   </body>
 </html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Fredericka+the+Great|Averia+Serif+Libre" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet" >
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="img/pizza.ico">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/scripts.js"></script>
+    <title>PHPizza</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1>PHPizza!</h1>
+      </div>
+      <button type="button" name="button" class="btn btn-xl" id="readyToOrderButton">Ready to Order?</button>
+      <div class="row list-group-item" id="pizzaDetailsDiv">
+        <div class="col-xs-6 list-group-item">
+          <div class="list-group" id="radioDiv">
+            <h2 class="well">Build your Pizza!</h2>
+            <h3>Choose a Size</h3>
+            <input form="form1" type="radio" name="pizzaSize" value="Small" checked> Small<br>
+            <input form="form1" type="radio" name="pizzaSize" value="Medium"> Medium<br>
+            <input form="form1" type="radio" name="pizzaSize" value="Large"> Large
+          </div>
+          <div class="list-group" id="checkboxesDiv">
+            <h3>Choose toppings</h3>
+            <label>
+              <input form="form1" value=" Cheese " type="checkbox" name="pizzaToppings[]" checked>Cheese
+            </label>
+            <label>
+              <input form="form1" value=" Pepperoni " type="checkbox" name="pizzaToppings[]">Pepperoni
+            </label>
+            <label>
+              <input form="form1" value=" Sausage " type="checkbox" name="pizzaToppings[]">Sausage
+            </label>
+            <label>
+              <input form="form1" value=" Olives " type="checkbox" name="pizzaToppings[]">Olives
+            </label>
+            <label>
+              <input form="form1" value=" Cat " type="checkbox" name="pizzaToppings[]">Cat
+            </label>
+            <label>
+              <input form="form1" value=" Mushrooms " type="checkbox" name="pizzaToppings[]">Mushrooms
+            </label>
+            <label>
+              <input form="form1" value=" Peppers " type="checkbox" name="pizzaToppings[]">Peppers
+            </label>
+            <label>
+              <input form="form1" value=" Vegetarian " type="checkbox" name="pizzaToppings[]">Vegetarian
+            </label>
+            <label>
+              <input form="form1" value=" MeatLovers " type="checkbox" name="pizzaToppings[]">Meatlovers
+            </label>
+            <label>
+              <input form="form1" value=" Dog " type="checkbox" name="pizzaToppings[]">Dog
+            </label>
+          </div>
+          <div class="btn-group-vertical">
+            <button class="btn btn-lg btn-primary" type="button" id="addPizzaButton">Add Pizza</button>
+            <button class="btn btn-lg btn-warning" type="button" id="continueToCheckoutButton">Continue to Checkout</button>
+          </div>
+        </div> <!-- NOTE: end col1 div -->
+
+        <div class="col-xs-6 list-group" id="customerOrder">
+          <div class="list-group-item">
+            <form>
+              <h2 class="well">Your Order</h2>
+              <select class="pizzaList" id="pizzaList">
+              </select>
+            </form>
+          </div>
+          <button class="btn btn-lg btn-danger" id="removePizzaButton" type="button">Remove Selected Pizza</button>
+          <div class="list-group-item">
+            <header class="panel panel-info">Your Total</header>
+            <div class="list-group-item" id="showTotal">
+            </div>
+          </div>
+        </div><!-- NOTE: end col2 div -->
+      </div><!-- NOTE: end row 1 div -->
+      <div class="row">
+        <div class="col-xs-12">
+          <form id="form1" action="deliveryReceipt.php" method="post">
+            <h2>Delivery Details</h2>
+            <div class="form-group">
+              <div class="form-group-item">
+                <label for="customerName"></label>
+                <input class="form-control" id="customerName" name="customerName" type="text" placeholder="Name" required>
+              </div>
+              <div class="form-group-item">
+                <label for="customerAddress"></label>
+                <input class="form-control" id="customerAddress" name="customerAddress" type="text" placeholder="Address" required>
+              </div>
+              <div class="form-group-item">
+                <label for="customerEmail"></label>
+                <input class="form-control" id="customerEmail" name="customerEmail" type="text" placeholder="Email" required>
+              </div>
+              <div class="well" id="displayOrder" >
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-lg btn-primary" id="customerDetailsSubmitButton" type="submit">Confirm Order</button>
+                <button class="btn btn-lg btn-danger" id="clearFormButton" type="reset" name="button" onClick="window.location.reload()" value="Refresh Page">Reset Form</button>
+
+              </div>
+            </div><!-- NOTE: end form group div -->
+          </form><!-- NOTE: end form div -->
+        </div><!-- NOTE: end col 1 div -->
+      </div><!-- NOTE: end row1 div -->
+    <!-- http://www.w3schools.com/jsref/met_select_remove.asp -->
+    </div><!-- NOTE: end container div -->
+  </body>
+</html>
